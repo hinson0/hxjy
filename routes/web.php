@@ -32,7 +32,3 @@ Route::group(['domain' => env('TEACHER_DOMAIN', 'laoshi.jiaoyu.com')], function 
         Route::get('/home', 'Teacher\HomeController@index');
     });
 });
-
-//Route::get('/', function () {
-//    return view('welcome');
-//});
