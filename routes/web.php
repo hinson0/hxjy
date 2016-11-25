@@ -18,6 +18,21 @@ Route::group(['domain' => env('ADMIN_DOMAIN', 'admin.jiaoyu.com')], function () 
     Route::post('/logout', 'Admin\SiteController@logout');
 });
 
+/*** 老师 ***/
+Route::group(['domain' => env('TEACHER_DOMAIN', 'laoshi.jiaoyu.com')], function () {
+    Route::get('/', 'Teacher\SiteController@index')->name('teacher');
+    Route::get('/test', 'Teacher\SiteController@test');
+    Route::get('/reg', 'Teacher\SiteController@reg');
+    Route::post('/doreg', 'Teacher\SiteController@doreg');
+    Route::get('/login', 'Teacher\SiteController@login')->name('teacher.login');
+    Route::post('/dologin', 'Teacher\SiteController@dologin');
+
+    Route::group(['middleware' => 'teacher'], function () {
+        Route::post('/dologout', 'Teacher\SiteController@dologout');
+        Route::get('/home', 'Teacher\HomeController@index');
+    });
+});
+
 //Route::get('/', function () {
 //    return view('welcome');
 //});
