@@ -19,9 +19,6 @@ class AuthTeacher
         if (!$teacher_role) {
             return redirect(route('teacher.login'));
         }
-//        if (1x) {
-//
-//        }
         return $next($request);
     }
 }
