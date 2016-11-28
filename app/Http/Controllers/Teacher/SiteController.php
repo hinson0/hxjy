@@ -108,7 +108,8 @@ class SiteController extends Controller
     public function test(Request $request)
     {
 //        $request->session()->clear();
-        var_dump($request->session()->all());exit;
+//        var_dump($request->session()->all());exit;
+        var_dump(session('teacher_id'));exit;
     }
 
 }

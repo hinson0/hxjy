@@ -30,6 +30,7 @@ class Teacher extends Model
     {
         $request->session()->set('teacher_role', true);
         $request->session()->set('teacher_id', $this->id);
+        $request->session()->set('teacher_tel', $this->id);
     }
 
 }
