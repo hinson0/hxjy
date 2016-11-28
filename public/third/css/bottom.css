@@ -1,0 +1,81 @@
+html{
+    width:100%;
+    height:100%;
+    margin:0;
+    padding: 0;
+    font-family: 微软雅黑;
+}
+body{
+    height:100%;
+    width:100%;
+    margin:0;
+    padding: 0;
+    background:#efefef;
+}
+
+
+
+ul li{
+    list-style: none;
+}
+footer{
+    width:100%;
+    border-top:1px solid #dcd4d4;
+    position: fixed;
+    bottom:0;
+    background: #ffffff;
+}
+.footer{
+    width:100%;
+    padding:2px 0 0 0;
+    height:2.8em;
+    margin:0;
+    line-height:2.8em;
+    display: flex;
+}
+.footer li{
+    flex: 1;
+    line-height: 2.8em;
+    position: relative;
+}
+.footer li span{
+    position: absolute;
+    line-height: 1.2em;
+    text-align: center;
+    height:1.2em;
+    font-size:0.8em;
+    color: #666666;
+    width:100%;
+    margin:0 auto;
+    bottom:0.1em;
+}
+.footer li span:nth-child(1){
+    background: url("/third/img/app.png") no-repeat;
+    top:0;
+    height:2.1em;
+    background-size:47px 1387px;
+}
+footer .footer li .home{
+    background-position: 0px -764px;
+    width: 2em;
+    left: 50%;
+    margin-left: -1em;
+}
+footer .footer li .work{
+    background-position: -2px -1076px;
+    width: 2em;
+    left: 50%;
+    margin-left: -1em;
+}
+footer .footer li .info{
+    background-position: -6px -1158px;
+    width: 2.2em;
+    left: 50%;
+    margin-left: -1.1em;
+}
+footer .footer li .mine{
+    background-position: -2px -1347px;
+    width: 2em;
+    left: 50%;
+    margin-left: -1em;
+}

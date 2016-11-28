@@ -91,41 +91,19 @@
                     data: JSon,
                     datatype: 'json',
                     statusCode: {
-                        500:function (data) {
-                          console.log(data);
-                        },
                         422: function () {
                             $(".tel").html("账号格式错误");
-                        },
-                        404: function () {
-                            alert('页面加载失败，请稍后再试');
-                        }, 403: function (data) {
-                            if (data.responseJSON.msg == '密码错误') {
-                                $(".passw").html(data.responseJSON.msg+"请注意大小写");
-                            }
-                            else if (data.responseJSON.msg == '账号不存在') {
-                                $(".tel").html(data.responseJSON.msg);
-                            }
-                            else {
-                                console.log(data)
-                            }
-
                         }
                     },
                     success: function (data, textStatus) {
                         console.log(data);
-                        if (data.msg == "用户不存在") {
-                            $(".tel").html(data.msg);
+                        if (data.msg == "手机号已经注册,请更换手机号或者找回密码") {
+                            $(".tel").html("此手机号码已被注册");
                         }
-                        else if (data.msg == "密码错误") {
-                            $(".passw").val(data.msg);
+                        else if (data.msg == "注册成功") {
+                            window.location.href = "/home";
                         }
-                        else if (data.msg == "登录成功") {
-//                            window.location.href = "/home";
-                        }
-                        else {
-                            alert("登录失败");
-                        }
+
                     }
                 })
             }
