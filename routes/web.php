@@ -29,6 +29,6 @@ Route::group(['domain' => env('TEACHER_DOMAIN', 'laoshi.jiaoyu.com')], function 
 
     Route::group(['middleware' => 'teacher'], function () {
         Route::post('/dologout', 'Teacher\SiteController@dologout');
-        Route::get('/home', 'Teacher\HomeController@index');
+        Route::get('/home', 'Teacher\HomeController@index')->name('teacher.home');
     });
 });

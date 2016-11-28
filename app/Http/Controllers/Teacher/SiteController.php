@@ -18,13 +18,52 @@ class SiteController extends Controller
         return view('teacher.site.reg');
     }
 
-    public function login()
+    public function doreg(Request $request)
     {
+        // input
+        $this->validate($request, [
+            'tel' => ['required', 'regex:/^(1[\d]{10})$/'],
+            'password' => 'bail|required',
+        ]);
+
+        $input = $request->all();
+
+        // 校验
+        $teacher = Teacher::where('tel', $input['tel'])->first();
+        if (!empty($teacher)) {
+            return response()->json(['msg' => '手机号已经注册,请更换手机号或者找回密码']);
+        }
+
+        // 执行
+        $teacher = new Teacher();
+        $teacher->tel = $input['tel'];
+        $teacher->password = $input['password'];
+        $teacher->save();
+
+        $teacher->iLoginSoIamVeryHappy();
+        $teacher->IamATeacher($request);
+
+        // 提示
+        return response()->json([
+            'msg' => '注册成功'
+        ]);
+    }
+
+    public function login(Request $request)
+    {
+        if ($request->session()->get('teacher_role')) {
+            return redirect(route('teacher.home'));
+        }
+
         return view('teacher.site.login');
     }
 
     public function dologin(Request $request)
     {
+        if ($request->session()->get('teacher_role')) {
+            return response()->json(['msg' => '登录成功']);
+        }
+
         // 拦截
         $this->validate($request, [
             'tel' => 'bail|required|digits:11',

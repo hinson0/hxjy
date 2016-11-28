@@ -29,8 +29,7 @@ class Teacher extends Model
     public function IamATeacher(Request $request) // 记录session
     {
         $request->session()->set('teacher_role', true);
-        $request->session()->set('id', $this->id);
-        $request->session()->set('info', $this);
+        $request->session()->set('teacher_id', $this->id);
     }
 
 }
