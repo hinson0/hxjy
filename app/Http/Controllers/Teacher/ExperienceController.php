@@ -4,9 +4,8 @@ namespace App\Http\Controllers\Teacher;
 
 use App\Models\TeacherExperience;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class Experience extends TeacherController
+class ExperienceController extends TeacherController
 {
     public function show()
     {
