@@ -11,4 +11,14 @@ class HomeController extends TeacherController
     {
         return view('teacher.home.index');
     }
+
+    public function my()
+    {
+        return view('teacher.home.my');
+    }
+
+    public function personal()
+    {
+        return view('teacher.home.personal');
+    }
 }

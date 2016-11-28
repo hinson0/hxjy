@@ -2,25 +2,16 @@
 
 namespace App\Http\Controllers\Teacher;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class TeacherController extends Controller
 {
-    protected $id = 0;
-    protected $tel = 0;
-    protected $name = '';
-    protected $information = [];
-
-    public function id()
+    public function __get($key)
     {
-        $this->id = session('teacher_id');
-        return $this->id;
+        if (empty(session($key))) {
+            throw new \Exception('获取不到的属性值');
+        }
+        return session($key);
     }
-
-    public function tel()
-    {
-    }
-
 }
 
