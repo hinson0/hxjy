@@ -37,6 +37,7 @@ Route::group(['domain' => env('TEACHER_DOMAIN', 'laoshi.jiaoyu.com')], function 
         Route::post('/info/save', 'Teacher\InformationController@save');
         Route::get('/exp/show', 'Teacher\Experience@show');
         Route::post('/exp/save', 'Teacher\Experience@save');
-
+        Route::get('/feature/show', 'Teacher\Feature@show');
+        Route::post('/feature/save', 'Teacher\Feature@save');
     });
 });
