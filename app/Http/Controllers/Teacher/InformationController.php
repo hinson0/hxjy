@@ -9,7 +9,8 @@ class InformationController extends TeacherController
 {
     public function show()
     {
-        return view('teacher.info.show');
+        $info = TeacherInformation::where('teacher_id', $this->teacher_id)->first();
+        return view('teacher.info.show', ['info' => $info]);
     }
 
     public function save(Request $request)
