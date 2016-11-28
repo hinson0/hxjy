@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.box{
+    width:100%;
+    height:100%;
+    background:#efefef;
+}
+.login-title {
+    width: 100%;
+    height: 55px;
+    font-size: 0.55em;
+    line-height: 55px;
+    background: #fffcfc;
+    color: #666666;
+    position: relative;
+    text-align: center;
+    border-bottom: 1px solid #efefef;
+}
+
+.input-group {
+    width: 100%;
+    height: 3em;
+    text-align: center;
+    position: relative;
+    background: #ffffff;
+
+}
+
+.input-group input {
+    width: 96%;
+    height: 3.5em;
+    line-height: 3.5em;
+    border: none;
+    outline: medium;
+    background: #ffffff;
+    text-indent: 12%;
+}
+
+.form form .input-group:nth-child(2) i{
+    display: block;
+    width:1em;
+    height:1.4em;
+    top:8px;
+    position: absolute;
+    left:5%;
+    background: #666666;
+    background: url(/third/img/tel.png);
+    background-size:100% 100%;
+}
+.form form .input-group:nth-child(3) i{
+    display: block;
+    width:0.85em;
+    height:1.2em;
+    top:10px;
+    position: absolute;
+    left:5%;
+    background: #666666;
+    background: url(/third/img/pass.png);
+    background-size:100% 100%;
+}
+#tel{
+    border-bottom: 0.2em solid #efefef;
+}
+.butt{
+    width:100%;
+    margin-top:1em;
+    text-align: center;
+}
+#sub{
+    width:80%;
+    height:2.2em;
+    border:none;
+    color: #ffffff;
+    font-size: 1em;
+
+}
+.back{
+    width:1.2em;
+    height:1.2em;
+    display: block;
+    border-top:0.2em solid #a7a7a7;
+    border-left:0.2em solid #a7a7a7;
+    transform: rotate(-45deg);
+    position: absolute;
+    top:1.5em;
+    left:2em;
+}
+.lost{
+    width:98%;
+    margin:0 auto;
+    margin-top:1.2em;
+    padding-right:2em;
+    text-align: right;
+}
+#lostpass{
+    font-size: 0.8em;
+    color: #666666;
+}
+.input-group span{
+    display: block;
+    height:2em;
+    line-height: 2em;
+    width:auto;
+    position: absolute;
+    top:0.8em;
+    right:5%;
+    color: #ff0000;
+    font-size:0.8em;
+}
