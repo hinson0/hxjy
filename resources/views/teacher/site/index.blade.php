@@ -7,33 +7,67 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>蓝雨家教注册页面</title>
     <style type="text/css">
-        .body{
+       html{
+           width:100%;
+           height:100%;
+           margin:0;
+           padding: 0;
+       }
+        body{
             height:100%;
             width:100%;
-            position: relative;
+            margin:0;
+            padding: 0;
+            background: url(/third/img/12345690.jpg) no-repeat;
+            background-size: 100% 100%;
         }
         .header{
             position: absolute;
-            bottom: 20px;
+            bottom:3.5%;
             width:100%;
-            height:100px;
+            height:3em;
+            text-align: center;
+            line-height:3em;
         }
         .login{
-            width:85px;
-            height:35px;
-            line-height: 35px;
-            color: #66666;
+            width:95px;
+            height:2.8em;
+            line-height: 2.6em;
+            position: absolute;
+            color: #1cc8b5;
+            border:2px solid #ffffff;
+            padding:0;
+            background: #FFFFFF;
+            outline: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            left:15%;
         }
 
+       .enroll{
+           width:95px;
+           height:2.8em;
+           position: absolute;
+           line-height: 2.6em;
+           color: #ffffff;
+           padding:0;
+           border:2px solid #1cc8b5;
+           outline: none;
+           border-radius: 5px;
+           background: #1cc8b5;
+           font-size: 0.9em;
+           right:15%;
+       }
     </style>
 </head>
 <body>
 <div class="box">
     <header>
         <div class="header">
-                <button class="login">注册</button> <button class="enroll">登录</button>
+            <a href="/reg"><button class="login">注册</button></a> <a href="/login"><button class="enroll">登录</button></a>
         </div>
     </header>
 </div>
 </body>
+
 </html>
