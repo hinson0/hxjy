@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Teacher;
 
-use App\Models\TeacherFeature;
+use App\Models\TeacherCase;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class FeatureController extends Controller
+class CaseController extends TeacherController
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,8 @@ class FeatureController extends Controller
      */
     public function index()
     {
-        $features = TeacherFeature::where('teacher_id', $this->teacher_id)->simplePaginate(10);
-        return view('teacher.feature.index', $features);
+        $cases = TeacherCase::where('teacher_id', $this->teacher_id)->simplePaginate(10);
+        return view('teacher.case.index', $cases);
     }
 
     /**
@@ -26,7 +25,7 @@ class FeatureController extends Controller
      */
     public function create()
     {
-        return view('teacher.feature.create');
+        return view('teacher.case.create');
     }
 
     /**
@@ -38,18 +37,21 @@ class FeatureController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'description' => 'required|between:20,255'
+            'title' => 'required|between:2,20',
+            'description' => 'required|between:20,255',
         ]);
 
-        $feature = TeacherFeature::where('teacher_id', $this->teacher_id)->first();
-        if (empty($feature)) {
-            $feature = new TeacherFeature();
+        $case = TeacherCase::where('teacher_id', $this->teacher_id)->where('title', $request->input('title'))->first();
+        if (!empty($case)) {
+            return response()->json(['msg' => '案例已经存在,无需提交'], 400);
         }
-        $feature->teacher_id = $this->teacher_id;
-        $feature->description = $request->input('description');
-        $feature->save();
+        $case = new TeacherCase();
+        $case->teacher_id = $this->teacher_id;
+        $case->title = $request->input('title');
+        $case->description = $request->input('description');
+        $case->save();
 
-        return response()->json(['msg' => '保存成功', 'feature' => $feature]);
+        return response()->json(['msg' => '保存成功', 'case' => $case]);
     }
 
     /**
@@ -60,8 +62,8 @@ class FeatureController extends Controller
      */
     public function show($id)
     {
-        $feature = TeacherFeature::find($id);
-        return response()->json($feature);
+        $case = TeacherCase::find($id);
+        return response()->json($case);
     }
 
     /**
@@ -72,7 +74,7 @@ class FeatureController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -85,18 +87,20 @@ class FeatureController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'description' => 'required|between:20,255'
+            'title' => 'required|between:2,20',
+            'description' => 'required|between:20,255',
         ]);
 
-        $feature = TeacherFeature::find($id);
-        if (empty($feature)) {
-            return response()->json(['msg' => '非法ID'], 400);
+        $case = TeacherCase::find($id);
+        if (empty($case)) {
+            return response()->json(['msg' => '案例不存在'], 400);
         }
 
-        $feature->description = $request->description;
-        $feature->save();
+        $case->title = $request->title;
+        $case->description = $request->description;
+        $case->save();
 
-        return response()->json(['msg' => '保存成功', 'feature' => $feature]);
+        return response()->json(['msg' => '保存成功', 'case' => $case]);
     }
 
     /**
@@ -107,12 +111,12 @@ class FeatureController extends Controller
      */
     public function destroy($id)
     {
-        $feature = TeacherFeature::find($id);
-        if (empty($feature)) {
-            return response()->json(['msg' => '非法ID'], 400);
+        $case = TeacherCase::find($id);
+        if (empty($case)) {
+            return response()->json(['msg' => '案例不存在'], 400);
         }
 
-        $feature->delete();
+        $case->delete();
 
         return response()->json(['msg' => '删除成功']);
     }
