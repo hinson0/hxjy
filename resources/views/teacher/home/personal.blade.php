@@ -33,10 +33,73 @@
                       教龄 &nbsp;&nbsp; 46年
                     </span>
             </div>
-            <a href="/info"> <div class="edit">
-                <span>编辑 <i class="arrow ed"></i></span>
-                </div></a>
+            <a href="/info">
+                <div class="edit">
+                    <span>编辑 <i class="arrow eb"></i></span>
+                </div>
+            </a>
         </div>
+
+        <ul class="dis">
+            <li>
+                <span>教育经历</span>
+                <span class="point point1">
+                    未完善
+                </span>
+                <i class="arrow ed"></i>
+            </li>
+            <li>
+                <span>教学特点</span>
+                <span class="point point2">未完善</span>
+                <i class="arrow ed"></i>
+            </li>
+            <li>
+                <span>成功案例</span>
+                <span class="point point3">
+未完善
+                </span>
+                <i class="arrow ed"></i>
+            </li>
+            <li>
+                <span>录制音视频</span>
+                <span class="point point4">
+未完善
+                </span><i class="arrow ed"></i>
+            </li>
+        </ul>
+        <ul class="dis">
+            <li>
+                <span>毕业院校</span>
+                <span class="point point5">
+                    未完善
+                </span>
+                <i class="arrow ed"></i>
+            </li>
+            <li>
+                <span>奖励荣誉</span>
+                <span class="point point6">未完善</span>
+                <i class="arrow ed"></i>
+            </li>
+
+        </ul>
+        <ul class="dis">
+            <li>
+                <span>个人风采</span>
+                <span class="point point5">
+                    未完善
+                </span>
+                <i class="arrow ed"></i>
+            </li>
+            <li>
+                <span>个人标签</span>
+                <span class="point point5">
+                    未完善
+                </span>
+                <i class="arrow ed"></i>
+            </li>
+
+        </ul>
+
     </section>
 </div>
 </body>

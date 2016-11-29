@@ -86,13 +86,39 @@ header{
     top:50%;
     margin-top:-0.75em;
 }
-.ed{
+.eb{
     top:0.2em;
     right:1.2em;
 }
 a{
     color: #666666;
     text-decoration: none;
+}
+.dis{
+    width:96%;
+    padding:0 2%;
+    line-height:3.5em;
+    background: #ffffff;
+    margin-top:0.5em;
+    margin-bottom:0;
+}
+.dis li{
+    position: relative;
+    height:3.5em;
+    color: #666666;
+    padding-left:10px;
+    border-bottom:1px solid #efefef;
+}
+.ed{
+    right:1em;
+    top:1.2em;
+}
+.point{
+    color: #ff0802;
+    display: block;
+    position: absolute;
+    right:2em;
+    top:-0.2em;
 }
 
 
