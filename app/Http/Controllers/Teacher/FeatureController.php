@@ -6,7 +6,7 @@ use App\Models\TeacherFeature;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class FeatureController extends Controller
+class FeatureController extends TeacherController
 {
     /**
      * Display a listing of the resource.

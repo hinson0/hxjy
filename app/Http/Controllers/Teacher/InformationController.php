@@ -4,44 +4,84 @@ namespace App\Http\Controllers\Teacher;
 
 use App\Models\TeacherInformation;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class InformationController extends TeacherController
 {
-    public function show()
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
         $info = TeacherInformation::where('teacher_id', $this->teacher_id)->first();
-        return view('teacher.info.show', ['info' => $info]);
+        return view('teacher.info.index');
     }
 
-    public function save(Request $request)
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
-        // 拦截
-        $this->validate($request, [
-            'avatar' => 'required',
-            'name' => 'required|between:2,6',
-            'nickname' => 'required|between:2,6',
-            'onjob' => 'required|boolean',
-            'teaching_age' => 'required|integer',
-            'gender' => 'required|boolean',
-        ]);
+        //
+    }
 
-        // 执行
-        $info = TeacherInformation::where('teacher_id', $this->teacher_id)->first();
-        if (empty($info)) {
-            $info = new TeacherInformation();
-        }
-        $info->teacher_id = $this->teacher_id;
-        $info->avatar = $request->input('avatar');
-        $info->name = $request->input('name');
-        $info->nickname = $request->input('name');
-        $info->onjob = $request->input('onjob');
-        $info->teaching_age = $request->input('teaching_age');
-        $info->gender = $request->input('gender');
-        $info->save();
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
 
-        // 提示
-        return response()->json([
-            'msg' => '保存成功'
-        ]);
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }

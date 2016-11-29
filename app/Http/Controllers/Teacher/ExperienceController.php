@@ -7,7 +7,7 @@ use App\Models\TeacherExperience;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class ExperienceController extends Controller
+class ExperienceController extends TeacherController
 {
     /**
      * Display a listing of the resource.
