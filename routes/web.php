@@ -33,7 +33,8 @@ Route::group(['domain' => env('TEACHER_DOMAIN', 'laoshi.jiaoyu.com')], function 
         Route::get('/my', 'Teacher\HomeController@my');
 
         Route::get('/personal', 'Teacher\HomeController@personal');
-        Route::resource('/infos', 'Teacher\InformationController');
+        Route::get('/info/show', 'Teacher\InformationController@show');
+        Route::post('/info/save', 'Teacher\InformationController@save');
         Route::resource('/exps', 'Teacher\ExperienceController');
         Route::resource('/features', 'Teacher\FeatureController');
         Route::resource('/cases', 'Teacher\CaseController');
