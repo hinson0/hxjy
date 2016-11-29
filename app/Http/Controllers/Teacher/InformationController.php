@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Teacher;
 
 use App\Models\TeacherInformation;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class InformationController extends TeacherController
 {
@@ -16,7 +15,7 @@ class InformationController extends TeacherController
     public function index()
     {
         $info = TeacherInformation::where('teacher_id', $this->teacher_id)->first();
-        return view('teacher.info.index');
+        return view('teacher.info.index', ['info' => $info]);
     }
 
     /**
@@ -26,7 +25,7 @@ class InformationController extends TeacherController
      */
     public function create()
     {
-        //
+        return view('teacher.info.create');
     }
 
     /**
@@ -37,7 +36,35 @@ class InformationController extends TeacherController
      */
     public function store(Request $request)
     {
-        //
+        // 拦截
+        $this->validate($request, [
+            'avatar' => 'required',
+            'name' => 'required|between:2,6',
+            'nickname' => 'required|between:2,6',
+            'onjob' => 'required|boolean',
+            'teaching_age' => 'required|integer',
+            'gender' => 'required|boolean',
+        ]);
+
+        // 执行
+        $info = TeacherInformation::where('teacher_id', $this->teacher_id)->first();
+        if (empty($info)) {
+            $info = new TeacherInformation();
+        }
+        $info->teacher_id = $this->teacher_id;
+        $info->avatar = $request->input('avatar');
+        $info->name = $request->input('name');
+        $info->nickname = $request->input('name');
+        $info->onjob = $request->input('onjob');
+        $info->teaching_age = $request->input('teaching_age');
+        $info->gender = $request->input('gender');
+        $info->save();
+
+        // 提示
+        return response()->json([
+            'msg' => '保存成功',
+            'info' => $info
+        ]);
     }
 
     /**
@@ -48,7 +75,8 @@ class InformationController extends TeacherController
      */
     public function show($id)
     {
-        //
+        $info = TeacherInformation::find($id);
+        return response()->json($info);
     }
 
     /**
@@ -71,7 +99,32 @@ class InformationController extends TeacherController
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'avatar' => 'required',
+            'name' => 'required|between:2,6',
+            'nickname' => 'required|between:2,6',
+            'onjob' => 'required|boolean',
+            'teaching_age' => 'required|integer',
+            'gender' => 'required|boolean',
+        ]);
+
+        $info = TeacherInformation::find($id);
+        if (empty($info)) {
+            return response()->json(['msg' => '非法ID']);
+        }
+
+        $info->avatar = $request->input('avatar');
+        $info->name = $request->input('name');
+        $info->nickname = $request->input('name');
+        $info->onjob = $request->input('onjob');
+        $info->teaching_age = $request->input('teaching_age');
+        $info->gender = $request->input('gender');
+        $info->save();
+
+        return response()->json([
+            'msg' => '保存成功',
+            'info' => $info
+        ]);
     }
 
     /**
@@ -82,6 +135,11 @@ class InformationController extends TeacherController
      */
     public function destroy($id)
     {
-        //
+        $info = TeacherInformation::find($id);
+        if (empty($info)) {
+            return response()->json(['msg' => '非法ID']);
+        }
+        $info->delete();
+        return response()->json(['msg' => '删除成功']);
     }
 }
