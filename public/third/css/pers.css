@@ -1,0 +1,99 @@
+html{
+    width:100%;
+    height:100%;
+    font-family:微软雅黑 ;
+}
+body{
+    width:100%;
+    height:100%;
+    background: #efefef;
+    margin:0;
+    padding:0;
+}
+header{
+    width:100%;
+    height:3em;
+}
+.header i{
+    display: block;
+    position: absolute;
+    top:0.8em;
+    left:1.5em;
+    width:0.7em;
+    height:0.7em;
+    transform: rotate(-45deg);
+    border-top:2px solid #3543ef;
+    border-left:2px solid #3543ef;
+}
+.header{
+    position: absolute;
+    top:0;
+    width:100%;
+    margin:0;
+    height:2.5em;
+    line-height:2.5em;
+    background: #FFFFFF;
+    text-align: center;
+    color: #666666;
+}
+.header span{
+    position: absolute;
+    right: 0.5em;
+    color: #3543ef;
+}
+.top{
+    height:5em;
+    position: relative;
+    background: #ffffff;
+    color: #666666;
+}
+.top_left_img{
+    width:3em;
+    height:3em;
+    border-radius:50%;
+    background:red;
+    position: absolute;
+    top:1em;
+    left:1em;
+}
+.name_top{
+    width:8em;
+    height:3em;
+    line-height:1.5em;
+    position: absolute;
+    top:1em;
+    left:4.6em;
+}
+.old{
+    font-size:0.5em;
+}
+
+.arrow{
+    display: block;
+    position: absolute;
+    width:0.8em;
+    height: 0.8em;
+    border-top:2px solid #666666;
+    border-right:2px solid #666666;
+    transform: rotate(45deg);
+}
+.edit{
+    width:5em;
+    font-size:0.6em;
+    height:1.5em;
+    position: absolute;
+    right:0.3em;
+    top:50%;
+    margin-top:-0.75em;
+}
+.ed{
+    top:0.2em;
+    right:1.2em;
+}
+a{
+    color: #666666;
+    text-decoration: none;
+}
+
+
+
