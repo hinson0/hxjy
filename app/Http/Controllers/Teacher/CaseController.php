@@ -74,7 +74,11 @@ class CaseController extends TeacherController
      */
     public function edit($id)
     {
-
+        $case = TeacherCase::find($id);
+        if (empty($case)) {
+            return response()->json(['msg' => '非法ID'], 400);
+        }
+        return view('teacher.case.edit', ['case' => $case]);
     }
 
     /**
