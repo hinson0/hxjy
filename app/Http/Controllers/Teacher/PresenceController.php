@@ -9,7 +9,7 @@ class PresenceController extends TeacherController
 {
     public function show()
     {
-        $presences = TeacherPresence::where('teacher_id', $this->teacher_id)->take(10)->get();
+        $presences = TeacherPresence::where('teacher_id', $this->teacher_id)->orderBy('id', 'DESC')->take(10)->get();
         return view('teacher.presence.show', ['presences' => $presences]);
     }
 

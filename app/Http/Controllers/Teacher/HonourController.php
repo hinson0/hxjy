@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Teacher;
 
 use App\Models\TeacherHonour;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class HonourController extends TeacherController
 {
@@ -15,7 +14,7 @@ class HonourController extends TeacherController
      */
     public function index()
     {
-        $honours = TeacherHonour::where('teacher_id', $this->teacher_id)->simplePagination(10);
+        $honours = TeacherHonour::where('teacher_id', $this->teacher_id)->orderBy('id', 'DESC')->take(10)->get();
         return view('teacher.honour.index', ['honours' => $honours]);
     }
 

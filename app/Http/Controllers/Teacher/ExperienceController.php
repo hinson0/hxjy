@@ -16,7 +16,7 @@ class ExperienceController extends TeacherController
      */
     public function index()
     {
-        $exps = TeacherExperience::where('teacher_id', $this->teacher_id)->simplePaginate(10);
+        $exps = TeacherExperience::where('teacher_id', $this->teacher_id)->orderBy('id', 'DESC')->take(10)->get();
         return view('teacher.exp.index', ['exps' => $exps]);
     }
 

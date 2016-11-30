@@ -15,7 +15,7 @@ class SchoolController extends TeacherController
      */
     public function index()
     {
-        $schools = TeacherSchool::where('teacher_id', $this->teacher_id)->simplePaginate(10);
+        $schools = TeacherSchool::where('teacher_id', $this->teacher_id)->orderBy('id', 'DESC')->take(10)->get();
         return view('teacher.school.index', ['schools' => $schools]);
     }
 
