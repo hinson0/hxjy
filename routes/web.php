@@ -39,5 +39,6 @@ Route::group(['domain' => env('TEACHER_DOMAIN', 'laoshi.jiaoyu.com')], function 
         Route::resource('/features', 'Teacher\FeatureController');
         Route::resource('/cases', 'Teacher\CaseController');
         Route::resource('/schools', 'Teacher\SchoolController');
+        Route::resource('/honours', 'Teacher\HonourController');
     });
 });
