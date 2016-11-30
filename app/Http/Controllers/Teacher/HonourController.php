@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Teacher;
 
-use App\Models\TeacherFeature;
+use App\Models\TeacherHonour;
 use Illuminate\Http\Request;
 
-class FeatureController extends TeacherController
+class HonourController extends TeacherController
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class FeatureController extends TeacherController
      */
     public function index()
     {
-        $features = TeacherFeature::where('teacher_id', $this->teacher_id)->orderBy('id', 'DESC')->take(10)->get();
-        return view('teacher.feature.index', $features);
+        $honours = TeacherHonour::where('teacher_id', $this->teacher_id)->orderBy('id', 'DESC')->take(10)->get();
+        return view('teacher.honour.index', ['honours' => $honours]);
     }
 
     /**
@@ -25,7 +25,7 @@ class FeatureController extends TeacherController
      */
     public function create()
     {
-        return view('teacher.feature.create');
+        return view('teacher.honour.create');
     }
 
     /**
@@ -37,19 +37,22 @@ class FeatureController extends TeacherController
     public function store(Request $request)
     {
         $this->validate($request, [
-            'description' => 'required|between:20,255'
+            'description' => 'required|between:20,255',
+            'photos' => 'required|array'
         ]);
-        $feature = TeacherFeature::where('teacher_id', $this->teacher_id)->first();
-        if (!empty($feature)) {
+
+        $honour = TeacherHonour::where('teacher_id', $this->teacher_id)->where('description', $request->description)->first();
+        if (!empty($honour)) {
             return response()->json(['msg' => '已添加无需重复添加'], 400);
         }
 
-        $feature = new TeacherFeature();
-        $feature->teacher_id = $this->teacher_id;
-        $feature->description = $request->input('description');
-        $feature->save();
+        $honour = new TeacherHonour();
+        $honour->description = $request->description;
+        $honour->teacher_id = $this->teacher_id;
+        $honour->photos = json_encode($request->photos);
+        $honour->save();
 
-        return response()->json(['msg' => '保存成功', 'feature' => $feature]);
+        return response()->json(['msg' => '保存成功', 'honour' => $honour]);
     }
 
     /**
@@ -60,8 +63,7 @@ class FeatureController extends TeacherController
      */
     public function show($id)
     {
-        $feature = TeacherFeature::find($id);
-        return response()->json($feature);
+        return response()->json(TeacherHonour::find($id));
     }
 
     /**
@@ -72,11 +74,11 @@ class FeatureController extends TeacherController
      */
     public function edit($id)
     {
-        $feature = TeacherFeature::find($id);
-        if (empty($feature)) {
+        $honour = TeacherHonour::find($id);
+        if (empty($honour)) {
             return response()->json(['msg' => '非法ID'], 400);
         }
-        return view('teacher.feature.edit', ['feature' => $feature]);
+        return view('teacher.honour.edit', ['honour' => $honour]);
     }
 
     /**
@@ -89,18 +91,21 @@ class FeatureController extends TeacherController
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'description' => 'required|between:20,255'
+            'description' => 'required|between:20,255',
+            'photos' => 'required|array'
         ]);
 
-        $feature = TeacherFeature::find($id);
-        if (empty($feature)) {
+        $honour = TeacherHonour::find($id);
+        if (empty($honour)) {
             return response()->json(['msg' => '非法ID'], 400);
         }
 
-        $feature->description = $request->description;
-        $feature->save();
+        $honour->description = $request->description;
+        $honour->teacher_id = $this->teacher_id;
+        $honour->photos = json_encode($request->photos);
+        $honour->save();
 
-        return response()->json(['msg' => '保存成功', 'feature' => $feature]);
+        return response()->json(['msg' => '保存成功']);
     }
 
     /**
@@ -111,15 +116,11 @@ class FeatureController extends TeacherController
      */
     public function destroy($id)
     {
-        // 不提供删除功能
-
-//        $feature = TeacherFeature::find($id);
-//        if (empty($feature)) {
-//            return response()->json(['msg' => '非法ID'], 400);
-//        }
-//
-//        $feature->delete();
-//
-//        return response()->json(['msg' => '删除成功']);
+        $honour = TeacherHonour::find($id);
+        if (empty($honour)) {
+            return response()->json(['msg' => '非法ID'], 400);
+        }
+        $honour->delete();
+        return response()->json(['msg' => '删除成功']);
     }
 }

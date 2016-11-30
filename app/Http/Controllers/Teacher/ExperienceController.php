@@ -16,7 +16,7 @@ class ExperienceController extends TeacherController
      */
     public function index()
     {
-        $exps = TeacherExperience::where('teacher_id', $this->teacher_id)->simplePaginate(10);
+        $exps = TeacherExperience::where('teacher_id', $this->teacher_id)->orderBy('id', 'DESC')->take(10)->get();
         return view('teacher.exp.index', ['exps' => $exps]);
     }
 
@@ -84,7 +84,11 @@ class ExperienceController extends TeacherController
      */
     public function edit($id)
     {
-
+        $exp = TeacherExperience::find($id);
+        if (empty($exp)) {
+            return response()->json(['msg' => '非法ID'], 400);
+        }
+        return view('teacher.case.edit', ['exp' => $exp]);
     }
 
     /**

@@ -14,7 +14,7 @@ class CaseController extends TeacherController
      */
     public function index()
     {
-        $cases = TeacherCase::where('teacher_id', $this->teacher_id)->simplePaginate(10);
+        $cases = TeacherCase::where('teacher_id', $this->teacher_id)->orderBy('id', 'DESC')->take(10)->get();
         return view('teacher.case.index', ['cases' => $cases]);
     }
 
