@@ -75,7 +75,11 @@ class HonourController extends TeacherController
      */
     public function edit($id)
     {
-        //
+        $honour = TeacherHonour::find($id);
+        if (empty($honour)) {
+            return response()->json(['msg' => '非法ID'], 400);
+        }
+        return view('teacher.honour.edit', ['honour' => $honour]);
     }
 
     /**

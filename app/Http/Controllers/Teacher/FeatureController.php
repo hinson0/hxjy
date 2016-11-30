@@ -72,7 +72,11 @@ class FeatureController extends TeacherController
      */
     public function edit($id)
     {
-        //
+        $feature = TeacherFeature::find($id);
+        if (empty($feature)) {
+            return response()->json(['msg' => '非法ID'], 400);
+        }
+        return view('teacher.feature.edit', ['feature' => $feature]);
     }
 
     /**

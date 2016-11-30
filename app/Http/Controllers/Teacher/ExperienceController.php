@@ -84,7 +84,11 @@ class ExperienceController extends TeacherController
      */
     public function edit($id)
     {
-
+        $exp = TeacherExperience::find($id);
+        if (empty($exp)) {
+            return response()->json(['msg' => '非法ID'], 400);
+        }
+        return view('teacher.case.edit', ['exp' => $exp]);
     }
 
     /**

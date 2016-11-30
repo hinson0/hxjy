@@ -84,7 +84,11 @@ class SchoolController extends TeacherController
      */
     public function edit($id)
     {
-        //
+        $school = TeacherSchool::find($id);
+        if (empty($school)) {
+            return response()->json(['msg' => '非法ID'], 400);
+        }
+        return view('teacher.school.edit', ['school' => $school]);
     }
 
     /**
