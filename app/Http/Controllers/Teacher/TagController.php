@@ -9,7 +9,7 @@ class TagController extends TeacherController
 {
     public function show()
     {
-        $tags = TeacherTag::where('teacher_id', $this->teacher_id)->take(10);
+        $tags = TeacherTag::where('teacher_id', $this->teacher_id)->take(10)->get();
         return view('teacher.tag.show', ['tags' => $tags]);
     }
 
