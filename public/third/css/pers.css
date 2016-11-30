@@ -1,7 +1,7 @@
 html{
     width:100%;
     height:100%;
-    font-family:微软雅黑 ;
+    font-family:微软雅黑;
 }
 body{
     width:100%;
@@ -17,21 +17,21 @@ header{
 .header i{
     display: block;
     position: absolute;
-    top:0.8em;
-    left:1.5em;
+    top:1.2em;
+    left:1.4em;
     width:0.7em;
     height:0.7em;
     transform: rotate(-45deg);
-    border-top:2px solid #3543ef;
-    border-left:2px solid #3543ef;
+    border-top:2px solid #2da4f9;
+    border-left:2px solid #2da4f9;
 }
 .header{
     position: absolute;
     top:0;
     width:100%;
     margin:0;
-    height:2.5em;
-    line-height:2.5em;
+    height:3em;
+    line-height:3em;
     background: #FFFFFF;
     text-align: center;
     color: #666666;
@@ -39,21 +39,23 @@ header{
 .header span{
     position: absolute;
     right: 0.5em;
-    color: #3543ef;
+    color: #2da4f9;
+    font-size:0.9em;
 }
 .top{
-    height:5em;
+    height:5.5em;
     position: relative;
     background: #ffffff;
+    margin-top:0.8em;
     color: #666666;
 }
 .top_left_img{
-    width:3em;
-    height:3em;
+    width:3.5em;
+    height:3.5em;
     border-radius:50%;
-    background:red;
+    background:#efefef;
     position: absolute;
-    top:1em;
+    top:0.8em;
     left:1em;
 }
 .name_top{
@@ -62,19 +64,55 @@ header{
     line-height:1.5em;
     position: absolute;
     top:1em;
-    left:4.6em;
+    left:5em;
 }
 .old{
     font-size:0.5em;
 }
-
+.perfect{
+    width:100%;
+    height:0.2em;
+    background: #efefef;
+    position: relative;
+    
+}
+.progress{
+    position: absolute;
+    width:1%;
+    height:0.3em;
+    z-index: 2;
+    top:0;
+    background: #ec311e;
+    left:0;
+}
+.pro-box{
+    display: block;
+    width:13%;
+    height:0.9em;
+    border-radius: 0.5em;
+    top:-0.34em;
+    left:1%;
+    position: absolute;
+    background: #ec311e;
+}
+.pro-msg{
+    width:100%;
+    height:2.5em;
+    line-height:2.5em;
+    background: #ffffff;
+    color: #666666;
+    padding-left:1em;
+}
+.pro-msg span{
+    color: #ff0000;
+}
 .arrow{
     display: block;
     position: absolute;
-    width:0.8em;
-    height: 0.8em;
-    border-top:2px solid #666666;
-    border-right:2px solid #666666;
+    width:0.7em;
+    height: 0.7em;
+    border-top:2px solid #c8c7cc;
+    border-right:2px solid #c8c7cc;
     transform: rotate(45deg);
 }
 .edit{
@@ -110,8 +148,8 @@ a{
     border-bottom:1px solid #efefef;
 }
 .ed{
-    right:1em;
-    top:1.2em;
+    right:0.8em;
+    top:1.1em;
 }
 .point{
     color: #ff0802;
@@ -120,6 +158,7 @@ a{
     right:2em;
     top:-0.2em;
 }
+
 
 
 

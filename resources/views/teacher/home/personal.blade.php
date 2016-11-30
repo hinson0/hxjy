@@ -39,45 +39,62 @@
                 </div>
             </a>
         </div>
+        <div class="perfect">
+            <div class="progress">
+
+            </div>
+            <span class="pro-box">
+
+            </span>
+        </div>
+        <div class="pro-msg">
+            资料完整度:<span>太少了哦!</span>
+        </div>
 
         <ul class="dis">
-            <li>
-                <span>教育经历</span>
-                <span class="point point1">
-                    未完善
+            <a href="/exps">
+                <li>
+                    <span>教育经历</span>
+                    <span class="point point1">
+                    未填写
                 </span>
-                <i class="arrow ed"></i>
-            </li>
-            <li>
-                <span>教学特点</span>
-                <span class="point point2">未完善</span>
-                <i class="arrow ed"></i>
-            </li>
-            <li>
-                <span>成功案例</span>
-                <span class="point point3">
-未完善
+                    <i class="arrow ed"></i>
+                </li>
+            </a>
+            <a href="/features">
+                <li>
+                    <span>教学特点</span>
+                    <span class="point point2">未填写</span>
+                    <i class="arrow ed"></i>
+                </li>
+               </a>
+                <a href="/cases">
+                    <li>
+                        <span>成功案例</span>
+                        <span class="point point3">
+未填写
                 </span>
-                <i class="arrow ed"></i>
-            </li>
-            <li>
-                <span>录制音视频</span>
-                <span class="point point4">
-未完善
-                </span><i class="arrow ed"></i>
-            </li>
+                        <i class="arrow ed"></i>
+                    </li>
+                </a>
+                {{--<li>--}}
+                    {{--<span>录制音视频</span>--}}
+                    {{--<span class="point point4">--}}
+{{--未录制--}}
+                {{--</span><i class="arrow ed"></i>--}}
+                {{--</li>--}}
         </ul>
         <ul class="dis">
             <li>
                 <span>毕业院校</span>
                 <span class="point point5">
-                    未完善
+                    未填写
                 </span>
                 <i class="arrow ed"></i>
             </li>
             <li>
                 <span>奖励荣誉</span>
-                <span class="point point6">未完善</span>
+                <span class="point point6">未填写</span>
                 <i class="arrow ed"></i>
             </li>
 
@@ -86,14 +103,14 @@
             <li>
                 <span>个人风采</span>
                 <span class="point point5">
-                    未完善
+                    未填写
                 </span>
                 <i class="arrow ed"></i>
             </li>
             <li>
                 <span>个人标签</span>
                 <span class="point point5">
-                    未完善
+                    未填写
                 </span>
                 <i class="arrow ed"></i>
             </li>
