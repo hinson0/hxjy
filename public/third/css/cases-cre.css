@@ -1,0 +1,35 @@
+body{
+    background: #efefef;
+}
+.body-title{
+    width:97%;
+    line-height: 3em;
+    height:3em;
+    background: #ffffff;
+    color: #666666;
+    font-size:1em;
+    padding-left:3%;
+    margin-top:1em;
+}
+.title-inp{
+    width:85%;
+    line-height:3em;
+    outline: none;
+    border: none;
+    padding-left:0.5em;
+}
+.msg{
+    width:100%;
+    margin-top:1em;
+    height:10em;
+    text-align: center;
+    background: #ffffff;
+}
+.textarea{
+    width:96%;
+    height:100%;
+    outline: none;
+    border:none;
+    padding:0.5em;
+    resize: none;
+}
