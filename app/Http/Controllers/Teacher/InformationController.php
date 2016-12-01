@@ -22,7 +22,7 @@ class InformationController extends TeacherController
             'nickname' => 'required|between:2,6',
             'onjob' => 'required|boolean',
             'teaching_age' => 'required|integer',
-            'gender' => 'required|boolean',
+            'gender' => 'required|integer',
         ]);
 
         // 执行
