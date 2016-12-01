@@ -20,6 +20,7 @@
         </div>
     </header>
     <section>
+        <a href="/info/show">
         <div class="top">
             <div class="top_left_img">
                 <img src="" alt="">
@@ -33,12 +34,11 @@
                       教龄 &nbsp;&nbsp; 46年
                     </span>
             </div>
-            <a href="/info">
                 <div class="edit">
                     <span>编辑 <i class="arrow eb"></i></span>
                 </div>
-            </a>
         </div>
+        </a>
         <div class="perfect">
             <div class="progress">
 

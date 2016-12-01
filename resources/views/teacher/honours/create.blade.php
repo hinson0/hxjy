@@ -47,7 +47,7 @@
                 姓名
                 </span>
                     <span class="head_right">
-              {{--<input type="text" class="name" value="<?php echo $info->name ?>" />--}}
+              <input type="text" class="name" value="黄子义" />
                 </span>
                 </li>
                 <li class="head">
@@ -99,43 +99,4 @@
     </section>
 </div>
 </body>
-<script type="text/javascript">
-    $(document).ready(function(){
-       $(".button").click(function(){
-           var onjob;
-           var gender;
-           if($("#online").val()=="是"){
-              onjob=1;
-           }else if($("#online").val()=="否"){
-                onjob=0;
-           };
-           if($("#sex").val()=="男"){
-                gender=1;
-           }else if($("#sex").val()=="女"){
-                gender=2;
-           };
-
-           var info={
-               name:$(".name").val(),
-               nickname:$(".nickname").val(),
-               teaching_age:$("#old").val(),
-               onjob:onjob,
-               avatar:"ddd",
-               gender:gender,
-               _token:$("input[name='_token']").val()
-           };
-           $.ajax({
-               url:'/info/save',
-               type:'post',
-               data:info,
-               datatype:'json',
-               success:function(data){
-                   if(data.msg=="保存成功"){
-                       window.location.reload();
-                   }
-               }
-           });
-       });
-    });
-</script>
 </html>

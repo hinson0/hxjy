@@ -109,12 +109,14 @@
                 </span>
                 <span>消息</span>
             </li>
+            <a href="/my">
             <li>
                 <span class="mine">
 
                 </span>
                 <span>我的</span>
             </li>
+            </a>
         </ul>
     </footer>
 </div>
