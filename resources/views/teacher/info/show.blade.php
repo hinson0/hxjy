@@ -47,7 +47,7 @@
                 姓名
                 </span>
                     <span class="head_right">
-              <input type="text" class="name" value="黄子义" />
+              <input type="text" class="name" value="<?php if (!empty($info)) { echo $info->name; } ?>" />
                 </span>
                 </li>
                 <li class="head">

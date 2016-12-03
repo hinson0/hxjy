@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Teacher;
 
+use App\Models\TeacherInformation;
+use App\Models\TeacherStatistics;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class HomeController extends TeacherController
 {
@@ -19,6 +20,14 @@ class HomeController extends TeacherController
 
     public function personal()
     {
-        return view('teacher.home.personal');
+        $info = TeacherInformation::where('teacher_id', $this->teacher_id)->first();
+        $statistics = TeacherStatistics::where('teacher_id', $this->teacher_id)->first();
+        // 触发自动更新
+        if (empty($statistics)) {
+            $statistics = TeacherStatistics::autoUpdateWhenEmpty($this->teacher_id);
+        } else {
+            $statistics->autoUpdate();
+        }
+        return view('teacher.home.personal', ['info' => $info, 'statistics' => $statistics]);
     }
 }
