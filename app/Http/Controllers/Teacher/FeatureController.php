@@ -14,7 +14,7 @@ class FeatureController extends TeacherController
      */
     public function index()
     {
-        $features = TeacherFeature::where('teacher_id', $this->teacher_id)->orderBy('id', 'DESC')->take(10)->get();
+        $features = TeacherFeature::where('teacher_id', $this->teacher_id)->orderBy('id', 'DESC')->take(1)->get();
         return view('teacher.feature.index', $features);
     }
 
