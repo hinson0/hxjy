@@ -25,6 +25,9 @@ header{
     border-top:2px solid #2da4f9;
     border-left:2px solid #2da4f9;
 }
+ul li{
+    list-style: none;
+}
 .header{
     position: absolute;
     top:0;

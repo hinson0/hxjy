@@ -20,7 +20,7 @@
 
                 </i>
                 <span class="title">
-                       教学经历
+                       成功案例
                     </span>
                 <span class="button">
                         <a href="/cases/create">新增</a>

@@ -1,0 +1,80 @@
+body{
+    background: #efefef;
+    font-family: 微软雅黑;
+}
+.center{
+    width:96%;
+    padding:0 2% 0 2%;
+    height:auto;
+    position: relative;
+    margin-top: 0.5em;
+    background: #ffffff;
+}
+.reveal{
+    width:96%;
+    padding:2%;
+    position: relative;
+
+}
+.revaal-header-date{
+    width:100%;
+}
+/*.revaal-header-date i{*/
+    /*display: block;*/
+    /*position: absolute;*/
+    /*width:1.5em;*/
+    /*top:1.2em;*/
+    /*left:3.9em;*/
+    /*height:0.1em;*/
+    /*background: #666666;*/
+/*}*/
+.header-date-star,.header-date-end{
+    color: #666666;
+    font-size: 0.8em;
+    margin-right:1.5em;
+}
+.header-date-end{
+    margin-left:1.5em;
+}
+.edit{
+    width:3em;
+    height:2.3em;
+    line-height:2.3em;
+    position: absolute;
+    right:0;
+    top:0;
+}
+.edit span{
+    color: #666666;
+    font-size: 0.9em;
+}
+.edit i{
+    display: block;
+    width:0.5em;
+    height: 0.5em;
+    border-top:0.1em solid #666666;
+    border-right:0.1em solid #666666;
+    transform: rotate(45deg);
+    position: absolute;
+    top:0.9em;
+    right:0.4em;
+}
+.content{
+    width:100%;
+}
+.content h4{
+    line-height: 0em;
+    font-size:0.95em;
+    font-weight: 500;
+    color: #000000;
+}
+.content-c{
+    width:98%;
+    padding:1%;
+}
+.content-b{
+    color: #666666;
+    font-size:0.5em;
+    line-height:0em;
+
+}

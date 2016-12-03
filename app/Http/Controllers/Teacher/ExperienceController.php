@@ -88,7 +88,7 @@ class ExperienceController extends TeacherController
         if (empty($exp)) {
             return response()->json(['msg' => '非法ID'], 400);
         }
-        return view('teacher.case.edit', ['exp' => $exp]);
+        return view('teacher.exp.edit', ['exp' => $exp]);
     }
 
     /**

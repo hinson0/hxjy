@@ -35,11 +35,13 @@
                 </span>
                 <span>消息</span>
             </li>
+
             <li>
+                <a href="/my">
                 <span class="mine">
 
                 </span>
-                <span>我的</span>
+                <span>我的</span></a>
             </li>
         </ul>
     </footer>

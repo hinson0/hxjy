@@ -33,7 +33,7 @@ class InformationController extends TeacherController
         $info->teacher_id = $this->teacher_id;
         $info->avatar = $request->input('avatar');
         $info->name = $request->input('name');
-        $info->nickname = $request->input('name');
+        $info->nickname = $request->input('nickname');
         $info->onjob = $request->input('onjob');
         $info->teaching_age = $request->input('teaching_age');
         $info->gender = $request->input('gender');

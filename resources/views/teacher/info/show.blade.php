@@ -15,9 +15,9 @@
     <header>
         <div class="header">
             <div class="top">
-                <i class="back">
+                <a href="/personal"><i class="back">
 
-                </i>
+                </i></a>
                 <span class="title">
                        基本信息
                     </span>
@@ -47,7 +47,7 @@
                 姓名
                 </span>
                     <span class="head_right">
-              {{--<input type="text" class="name" value="<?php echo $info->name ?>" />--}}
+              <input type="text" class="name" value="<?php if(!empty($info))echo $info->name ?>" />
                 </span>
                 </li>
                 <li class="head">
@@ -55,7 +55,7 @@
                昵称
                 </span>
                     <span class="head_right">
-                      <input type="text" class="nickname" value="二师兄">
+                      <input type="text" class="nickname" value="<?php if(!empty($info))echo $info->nickname ?>">
                 </span>
                 </li>
                 <li class="head">
@@ -64,8 +64,8 @@
                 </span>
                     <span class="head_right">
                <select  id="sex">
-                   <option value="男">男</option>
-                   <option value="女">女</option>
+                   <option value="1" <?php if(!empty($info))if($info->gender==1)echo "selected"?>>男</option>
+                   <option value="2" <?php if(!empty($info))if($info->gender==2)echo "selected"?>>女</option>
                </select>
                 </span>
                 </li>
@@ -75,8 +75,8 @@
                 </span>
                     <span class="head_right">
                <select  id="online">
-                   <option value="是">是</option>
-                   <option value="否">否</option>
+                   <option value="1" <?php if(!empty($info))if($info->onjob==1)echo "selected"?>>是</option>
+                   <option value="0" <?php if(!empty($info))if($info->onjob==0)echo "selected"?>>否</option>
                </select>
                 </span>
                 </li>
@@ -85,11 +85,11 @@
                 教龄
                 </span>
                     <span class="head_right">
-                        <select id="old">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
+                        <select id="old" >
+                            <option value="0" <?php if(!empty($info))if($info->teaching_age==0)echo "selected"?>>0</option>
+                            <option value="1"<?php if(!empty($info))if($info->teaching_age==1)echo "selected"?>>1</option>
+                            <option value="2"<?php if(!empty($info))if($info->teaching_age==2)echo "selected"?>>2</option>
+                            <option value="3"<?php if(!empty($info))if($info->teaching_age==3)echo "selected"?>>3</option>
                         </select>
                年
                 </span>
@@ -102,28 +102,29 @@
 <script type="text/javascript">
     $(document).ready(function(){
        $(".button").click(function(){
-           var onjob;
-           var gender;
-           if($("#online").val()=="是"){
-              onjob=1;
-           }else if($("#online").val()=="否"){
-                onjob=0;
-           };
-           if($("#sex").val()=="男"){
-                gender=1;
-           }else if($("#sex").val()=="女"){
-                gender=2;
-           };
+//           var onjob;
+//           var gender;
+//           if($("#online").val()=="是"){
+//              onjob=1;
+//           }else if($("#online").val()=="否"){
+//                onjob=0;
+//           };
+//           if($("#sex").val()=="男"){
+//                gender=1;
+//           }else if($("#sex").val()=="女"){
+//                gender=2;
+//           };
 
            var info={
                name:$(".name").val(),
                nickname:$(".nickname").val(),
                teaching_age:$("#old").val(),
-               onjob:onjob,
+               onjob:$("#online").val(),
                avatar:"ddd",
-               gender:gender,
+               gender:$("#sex").val(),
                _token:$("input[name='_token']").val()
            };
+//           console.log(info)
            $.ajax({
                url:'/info/save',
                type:'post',
