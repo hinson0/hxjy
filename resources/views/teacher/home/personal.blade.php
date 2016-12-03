@@ -12,7 +12,7 @@
 <div class="box">
     <header>
         <div class="header">
-            <i></i>
+            <a href="/my"><i></i></a>
             个人资料
             <span>
               预览主页
@@ -85,18 +85,19 @@
                 {{--</li>--}}
         </ul>
         <ul class="dis">
+            <a href="/schools">
             <li>
                 <span>毕业院校</span>
                 <span class="point point5">
                     未填写
                 </span>
                 <i class="arrow ed"></i>
-            </li>
-            <li>
-                <span>奖励荣誉</span>
+            </li></a>
+            <a href="/honours"><li>
+                 <span>奖励荣誉</span>
                 <span class="point point6">未填写</span>
                 <i class="arrow ed"></i>
-            </li>
+            </li></a>
 
         </ul>
         <ul class="dis">

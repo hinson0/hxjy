@@ -15,7 +15,6 @@ class HomeController extends TeacherController
 
     public function my()
     {
-        echo 1;exit;
         return view('teacher.home.my');
     }
 

@@ -1,0 +1,73 @@
+body{
+    background: #efefef;
+    font-family: 微软雅黑;
+}
+.center{
+    width:100%;
+}
+.center-title{
+    width:97%;
+    height:3em;
+    line-height: 3em;
+    position: relative;
+    background: #ffffff;
+    text-align: right;
+    padding-right:3%;
+    margin-top:0.5em;
+    border-bottom:1px solid #efefef;
+}
+#title{
+    width:80%;
+    height:2.6em;
+    line-height: 2.6em;
+    outline: none;
+    border:none;
+    text-align: right;
+    font-size: 1em;
+}
+.center-title span{
+display: block;
+    position: absolute;
+    left:2em;
+    font-size: 1em;
+    color: #666666;
+}
+.center-date{
+    width:97%;
+    position: relative;
+    padding-right:3%;
+    height:3em;
+    line-height:3em;
+    background:#ffffff;
+    border-bottom:1px solid #efefef;
+    text-align: right;
+}
+.center-date input{
+    width:70%;
+    height:2.6em;
+    line-height:2.6em;
+    text-align: right;
+    outline: none;
+    border: none;
+}
+.center-date span{
+    display: block;
+    position: absolute;
+    left:2em;
+    color: #666666;
+}
+.textarea{
+    width:96%;
+    padding:2%;
+    background: #ffffff;
+    margin-top:0.5em;
+    height:6.2em;
+    text-align: center;
+}
+.textarea textarea{
+    width:100%;
+    height:100%;
+    border:none;
+    outline: none;
+    resize: none;
+}
