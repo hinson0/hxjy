@@ -36,46 +36,46 @@ class TeacherStatistics extends Model
 //            }
 //        }
 
-//        $this->score = $this->infoScore();
-        $this->score = 0;
 
         $exps = TeacherExperience::where('teacher_id', $this->teacher_id)->count();
         $this->exps = $exps;
-        $this->score += self::SCORE_EXPS;
 
         $features = TeacherFeature::where('teacher_id', $this->teacher_id)->count();
         $this->features = $features;
-        $this->score += self::SCORE_FEATURES;
 
         $cases = TeacherCase::where('teacher_id', $this->teacher_id)->count();
         $this->cases = $cases;
-        $this->score += self::SCORE_CASES;
 
         $schools = TeacherSchool::where('teacher_id', $this->teacher_id)->count();
         $this->schools = $schools;
-        $this->score += self::SCORE_SCHOOLS;
 
         $honours = TeacherHonour::where('teacher_id', $this->teacher_id)->count();
         $this->honours = $honours;
-        $this->score += self::SCORE_HONOURS;
 
         $tags = TeacherTag::where('teacher_id', $this->teacher_id)->count();
         $this->tags = $tags;
-        $this->score += self::SCORE_TAGS;
 
         $presences = TeacherPresence::where('teacher_id', $this->teacher_id)->count();
         $this->presences = $presences;
-        $this->score += self::SCORE_PRESENCES;
 
+        $this->score = $this->initScore();
         $this->save();
     }
 
-    public function infoScore(TeacherInformation $info)
+    public function initScore()
     {
+        $info = TeacherInformation::where('teacher_id', $this->teacher_id)->first();
         $score = 0;
         !empty($info->avatar) && $score += self::SCORE_AVATAR;
         !empty($info->nickname) && $score += self::SCORE_NICKNAME;
-        !empty($info->GENDER) && $score += self::SCORE_GENDER;
+        !empty($info->gender) && $score += self::SCORE_GENDER;
+        !empty($this->exps) && $score += self::SCORE_EXPS;
+        !empty($this->fetaures) && $score += self::SCORE_FEATURES;
+        !empty($this->cases) && $score += self::SCORE_CASES;
+        !empty($this->schools) && $score += self::SCORE_SCHOOLS;
+        !empty($this->honours) && $score += self::SCORE_HONOURS;
+        !empty($this->tags) && $score += self::SCORE_TAGS;
+        !empty($this->presences) && $score += self::SCORE_PRESENCES;
         return $score;
     }
 
