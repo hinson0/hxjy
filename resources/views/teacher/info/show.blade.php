@@ -47,11 +47,7 @@
                 姓名
                 </span>
                     <span class="head_right">
-<<<<<<< HEAD
               <input type="text" class="name" value="<?php if (!empty($info)) { echo $info->name; } ?>" />
-=======
-              {{--<input type="text" class="name" value="<?php echo $info->name ?>" />--}}
->>>>>>> 7af5f8408390a07f16afcc3dce4df4e0fa4865a8
                 </span>
                 </li>
                 <li class="head">
